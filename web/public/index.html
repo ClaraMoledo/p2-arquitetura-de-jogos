@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ludoteca — Loja &amp; Comunidade de Jogos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="glow"></div>
+    <header class="hero">
+      <div class="hero__logo">
+        <span class="hero__icon">🎮</span>
+        <div>
+          <h1>LUDOTECA</h1>
+          <p>loja &amp; comunidade de jogos</p>
+        </div>
+      </div>
+
+      <!-- Barra do jogador: perfil ativo + carteira -->
+      <div class="player" id="player-bar">
+        <div class="player__pick">
+          <label class="player__label" for="player-select">Jogador</label>
+          <select class="select" id="player-select"></select>
+          <button class="btn btn--ghost btn--mini" id="novo-jogador-btn">+ Novo</button>
+        </div>
+        <div class="player__wallet">
+          <span class="player__coin">💰</span>
+          <span id="player-saldo">—</span>
+          <button class="btn btn--ghost btn--mini" id="deposito-btn">Adicionar saldo</button>
+        </div>
+      </div>
+
+      <form class="box form is-hidden" id="form-novo-jogador">
+        <label>Apelido do novo jogador<input name="name" minlength="2" placeholder="Ex.: Nova" /></label>
+        <button class="btn btn--neon btn--mini" type="submit">Criar jogador</button>
+        <p class="msg" id="novo-jogador-msg"></p>
+      </form>
+
+      <nav class="nav" id="nav">
+        <button class="nav__btn nav__btn--on" data-view="loja">Loja</button>
+        <button class="nav__btn" data-view="catalogo">Catálogo</button>
+        <button class="nav__btn" data-view="ranking">Ranking</button>
+        <button class="nav__btn" data-view="colecao">Coleção</button>
+        <button class="nav__btn" data-view="amigos">Amigos</button>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <!-- LOJA -->
+      <section class="view view--on" id="view-loja">
+        <div class="bar">
+          <h2>Loja</h2>
+          <div class="bar__actions">
+            <input id="loja-busca" class="select" placeholder="🔎 Buscar jogo…" />
+            <button class="btn btn--ghost" id="reload-loja">Atualizar</button>
+          </div>
+        </div>
+        <div id="loja-status"></div>
+        <div class="grid" id="loja-grid"></div>
+      </section>
+
+      <!-- CATÁLOGO (administração + avaliações) -->
+      <section class="view" id="view-catalogo">
+        <div class="bar">
+          <h2>Catálogo</h2>
+          <button class="btn btn--neon" id="toggle-novo-jogo">+ Adicionar jogo</button>
+        </div>
+
+        <form class="box form is-hidden" id="form-jogo">
+          <div class="row">
+            <label>Título<input name="title" required minlength="2" /></label>
+            <label>Gênero<input name="genre" placeholder="Ex.: RPG, Ação" /></label>
+          </div>
+          <div class="row">
+            <label>Plataforma<input name="platform" placeholder="PC / Console" /></label>
+            <label>Ano<input name="releaseYear" type="number" min="1958" required /></label>
+          </div>
+          <label>Preço (R$)<input name="price" type="number" step="0.01" min="0" required /></label>
+          <button class="btn btn--neon" type="submit">Salvar jogo</button>
+          <p class="msg" id="jogo-msg"></p>
+        </form>
+
+        <div id="catalogo-status"></div>
+        <div class="grid" id="catalogo-grid"></div>
+      </section>
+
+      <!-- RANKING -->
+      <section class="view" id="view-ranking">
+        <div class="bar">
+          <h2>Ranking</h2>
+          <div class="bar__actions">
+            <select id="ranking-by" class="select">
+              <option value="rating">Melhores notas</option>
+              <option value="recent">Mais recentes</option>
+            </select>
+            <button class="btn btn--ghost" id="reload-ranking">Atualizar</button>
+          </div>
+        </div>
+        <div id="ranking-status"></div>
+        <ol class="rank" id="ranking-lista"></ol>
+      </section>
+
+      <!-- COLEÇÃO (biblioteca comprada + desejos) -->
+      <section class="view" id="view-colecao">
+        <div class="bar">
+          <h2>Minha coleção</h2>
+          <button class="btn btn--ghost" id="reload-colecao">Atualizar</button>
+        </div>
+        <div id="colecao-status"></div>
+
+        <h3 class="subhead">🎁 Biblioteca</h3>
+        <div class="grid" id="biblioteca-grid"></div>
+
+        <h3 class="subhead">⭐ Lista de desejos</h3>
+        <div class="grid" id="desejos-grid"></div>
+      </section>
+
+      <!-- AMIGOS -->
+      <section class="view" id="view-amigos">
+        <div class="bar">
+          <h2>Amigos</h2>
+          <button class="btn btn--ghost" id="reload-amigos">Atualizar</button>
+        </div>
+
+        <div class="box">
+          <h3 class="subhead">Adicionar amigo</h3>
+          <div class="row">
+            <label>Jogador
+              <select id="amigo-select" class="select"></select>
+            </label>
+            <div class="amigo-add">
+              <button class="btn btn--neon btn--mini" id="add-amigo-btn">Adicionar</button>
+            </div>
+          </div>
+          <p class="msg" id="amigo-msg"></p>
+        </div>
+
+        <div id="amigos-status"></div>
+        <div class="grid" id="amigos-grid"></div>
+      </section>
+    </main>
+
+    <footer class="foot">Ludoteca · arquitetura de microsserviços</footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

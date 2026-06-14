@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Variáveis locais (segredos)
+.env
+
+# Sistema / editores
+.DS_Store
+.vscode/
+.idea/

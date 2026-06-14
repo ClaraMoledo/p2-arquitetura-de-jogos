@@ -1,0 +1,9 @@
+# Overrides APENAS para desenvolvimento local.
+# O Docker Compose carrega este arquivo automaticamente junto do
+# docker-compose.yml ao rodar "docker compose up" na sua máquina.
+# Plataformas como o EasyPanel usam só o docker-compose.yml, então
+# a publicação de porta abaixo NÃO afeta o deploy (evita conflito de portas).
+services:
+  web:
+    ports:
+      - "${WEB_PORT:-8090}:80"

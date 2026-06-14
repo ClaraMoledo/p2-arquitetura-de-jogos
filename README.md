@@ -9,12 +9,12 @@ Construída como um conjunto de **microsserviços** em **Python/FastAPI**, segui
 **Arquitetura Limpa**, **SOLID**, **Design Patterns**, **TDD** e **BDD**, tudo
 orquestrado com **Docker Compose** e publicado em servidor.
 
-> **Aluna:** _preencha com seu nome_ · Universidade de Vassouras (Maricá) · Arquitetura de Software
-> **App no ar:** _cole aqui o link após publicar_ (ex.: `https://ludoteca.seudominio.com`)
+> **Aluna:** Ana Clara Moledo Neves · Universidade de Vassouras (Maricá) · Arquitetura de Software
+> **App no ar:** [Link do Ludoteca](https://p2-arquitetura-de-software-ludoteca.n5ywgm.easypanel.host/)
 
 ---
 
-## TL;DR — como rodar
+## Como rodar (resumo rápido)
 
 ```bash
 cp .env.example .env
@@ -166,7 +166,7 @@ gateway e microsserviços ficam na rede interna. Passo a passo no guia entregue 
 | Microsserviços | "Os microsserviços" |
 | TDD | `tests/unit` + "Testes" |
 | BDD | `tests/bdd` + "Testes" |
-| Docker | `docker-compose.yml` + "TL;DR" |
+| Docker | `docker-compose.yml` + "Como rodar (resumo rápido)" |
 | Deploy | "Deploy" + link no topo |
 | Justificativas | `docs/ARQUITETURA.md` |
 

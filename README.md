@@ -151,8 +151,9 @@ docker compose start players-db  # volta sozinho
 
 ## Deploy
 
-Publicado via **Docker Compose** (EasyPanel). A entrada pública é o serviço `web`;
-gateway e microsserviços ficam na rede interna. Passo a passo no guia entregue à parte.
+Publicado via **Docker Compose** (EasyPanel). A entrada pública é o serviço `web`,
+exposto por domínio; o gateway e os microsserviços ficam na rede interna, e cada banco
+roda em seu próprio contêiner. O link da aplicação no ar está no topo deste README.
 
 ## Onde cada critério está
 
@@ -172,4 +173,4 @@ gateway e microsserviços ficam na rede interna. Passo a passo no guia entregue 
 
 ---
 
-Feito com FastAPI, SQLAlchemy e muito café. Licença MIT.
+Construído com FastAPI e SQLAlchemy. Licença MIT.
